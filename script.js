@@ -1,7 +1,7 @@
 let addBtn = document.getElementById("addBtn");
 let taskInput = document.getElementById("taskInput");
 let taskList = document.getElementById("taskList");
-
+let clearAllBtn = document.getElementById("clearAllBtn");
 addBtn.onclick = function () {
     
     let task = taskInput.value;
@@ -60,6 +60,10 @@ span.textContent = task;
     } else {
         span.classList.remove("completed");
     }
+};
+
+clearAllBtn.onclick = function () {
+    taskList.innerHTML = "";
 };
 
     li.appendChild(checkbox);

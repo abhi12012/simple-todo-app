@@ -31,3 +31,9 @@ li {
     text-decoration: line-through;
     color: gray;
 }
+
+#clearAllBtn {
+    background: black;
+    color: white;
+    margin-left: 10px;
+}
