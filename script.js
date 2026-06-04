@@ -12,7 +12,14 @@ addBtn.onclick = function () {
     }
 
     let li = document.createElement("li");
-    li.textContent = task;
+
+   // Checkbox
+let checkbox = document.createElement("input");
+checkbox.type = "checkbox";
+
+// Task text
+let span = document.createElement("span");
+span.textContent = task;
 
 
     // ❌ Delete Button
@@ -41,16 +48,24 @@ addBtn.onclick = function () {
     editBtn.style.cursor = "pointer";
 
     editBtn.onclick = function () {
-        let newTask = prompt("Task edit karo:", li.firstChild.textContent);
+    let newTask = prompt("Task edit karo:", span.textContent);
 
-        if (newTask !== null && newTask !== "") {
-            li.firstChild.textContent = newTask;
-        }
-    };
+    if (newTask !== null && newTask !== "") {
+        span.textContent = newTask;
+    }
+};
+    checkbox.onchange = function () {
+    if (checkbox.checked) {
+        span.classList.add("completed");
+    } else {
+        span.classList.remove("completed");
+    }
+};
 
-    li.appendChild(delBtn);
-    li.appendChild(editBtn);
-
+    li.appendChild(checkbox);
+li.appendChild(span);
+li.appendChild(delBtn);
+li.appendChild(editBtn);
     
 
 
